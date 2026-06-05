@@ -1,0 +1,8 @@
+# {{DATE}} — {{focus}}
+
+- Tool / agent: {{}}
+- Worked on: {{one line}}
+- Changed: {{files / docs}}
+- Decisions: {{pointer to DECISIONS.md, or none}}
+- Open questions: {{pointer to OPEN_QUESTIONS.md, or none}}
+- Next: {{single concrete next step for the receiving agent}}

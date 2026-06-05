@@ -1,0 +1,56 @@
+# AGENTS.md — {{PROJECT_NAME}}
+
+> Canonical instructions for all AI agents. Codex, Cursor, Copilot, Gemini CLI, Windsurf, etc. read this file natively; Claude Code / Cowork reach it via `CLAUDE.md` (symlinked to this file). Cursor also applies `.cursor/rules/*`. Update this file in the same change that changes a convention. Keep it under ~400 lines.
+
+## 1. Read first (every session)
+1. This file.
+2. `kb/INDEX.md` — map of the knowledge base.
+3. `agent-sessions/INDEX.md` — what recent agents did (newest first).
+4. `git log --oneline -5` (skip if not a git repo).
+
+Load only what the task needs. Do not crawl the whole repo.
+
+## 2. Identity
+- Project: {{PROJECT_NAME}}
+- Purpose: {{ONE_LINE_PURPOSE}}
+- Owner: {{OWNER}}
+- Type: {{ARCHETYPE}}
+
+## 3. Folder map
+| Path | What | Authoritative? |
+|---|---|---|
+| `kb/` | Compiled knowledge base | Yes (knowledge) |
+| `agent-sessions/` | Session handoff log | Yes (history) |
+| `project-management/` | Live trackers | Yes (current state) |
+| {{PATH}} | {{WHAT}} | {{YES/NO}} |
+
+## 4. Do not load on first crawl
+- {{archives, vendored deps, generated output, large raw captures}}
+
+## 5. Answering questions (grounding)
+- Ground every claim. Cite inline: `[Verified: <path#section>]`.
+- If inferring or unsure, label it `[Guess: needs verification]`. Never present a guess as fact.
+- Prefer `kb/` pages; fall back to source files; cite what you used.
+- On conflict, newer source wins — log the conflict in `project-management/OPEN_QUESTIONS.md`.
+- External systems (Jira/Confluence/MCP): reads are fine; **writes need explicit user approval in-session**.
+
+## 6. Conventions
+- New decision → `project-management/DECISIONS.md`. Open question → `OPEN_QUESTIONS.md`. Follow-up → `ACTION_ITEMS.md`.
+- New/changed knowledge → update the `kb/` page + `kb/INDEX.md` + `kb/SOURCE-INDEX.md`.
+- Promote a good Q&A answer into a `kb/` page so knowledge compounds.
+- If a `kb/` page's source moved or changed, mark it stale and re-verify (drift).
+- Additive edits; don't rewrite history.
+
+## 7. Definition of done
+- [ ] Claims cited or labeled.
+- [ ] KB / index / trackers updated if knowledge changed.
+- [ ] Session handoff entry written (`agent-sessions/`).
+
+## 8. Capabilities
+See `CAPABILITY-MATRIX.md` — what this project supports, doesn't, or is unconfirmed.
+
+## 9. Tools / MCPs
+- {{wired MCP / tool — how and when to use it}}
+
+## 10. Session handoff
+At session end, if anything meaningful changed: copy `agent-sessions/_TEMPLATE.md` to `agent-sessions/YYYY-MM-DD-<slug>.md`, fill it, and prepend a line to `agent-sessions/INDEX.md`. Skip for pure Q&A.

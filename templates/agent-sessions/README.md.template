@@ -1,0 +1,8 @@
+# Agent Sessions
+
+Handoff log so a new agent knows what recent agents did — without re-reading everything.
+
+- One file per session: `YYYY-MM-DD-<slug>.md` (copy `_TEMPLATE.md`).
+- Prepend a one-line summary to `INDEX.md` (newest first).
+- Write only when something meaningful changed; skip pure Q&A or read-only sessions.
+- Never rewrite past entries.

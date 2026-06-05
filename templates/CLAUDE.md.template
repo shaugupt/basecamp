@@ -1,0 +1,5 @@
+# CLAUDE.md
+
+> Fallback only. The preferred setup is a symlink `CLAUDE.md → AGENTS.md` so Claude Code / Cowork load the full canonical instructions directly. Use this pointer file only where symlinks aren't supported.
+
+**Before doing anything else, open `AGENTS.md` at the repository root and follow it as your primary instructions.** It is the canonical guide — project map, grounding rules, conventions, and session handoff. Re-read it if your context was compacted mid-session. Don't act on this file alone; the real instructions live in `AGENTS.md`.

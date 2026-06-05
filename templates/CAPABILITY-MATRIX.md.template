@@ -1,0 +1,9 @@
+# Capability Matrix — {{PROJECT_NAME}}
+
+What this project supports, doesn't, or is unconfirmed. Cite sources; label guesses. "Unknown" is a valid, honest answer — list it rather than guessing.
+
+| Capability | Status | Source | Notes |
+|---|---|---|---|
+| {{capability}} | Supported / Not supported / Unknown | `{{path or URL}}` | {{}} |
+
+Rule: every Status is backed by `kb/SOURCE-INDEX.md` or labeled `[Guess]`.

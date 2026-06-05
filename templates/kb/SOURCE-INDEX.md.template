@@ -1,0 +1,10 @@
+# Source Index
+
+Maps each topic to its authoritative source and a confidence tag.
+Confidence: `Verified` (stated in source) · `Inferred` (reasoned from sources) · `Guess` (unverified).
+
+| Topic | Authoritative source | Confidence | Notes |
+|---|---|---|---|
+| {{topic}} | `{{path or URL}}` | Verified | {{}} |
+
+Rules: answers cite from here; new facts add a row; newer source wins on conflict.

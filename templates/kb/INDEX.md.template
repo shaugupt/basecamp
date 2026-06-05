@@ -1,0 +1,17 @@
+# Knowledge Base — Index
+
+Read this first. Load only the pages a task needs; do not crawl everything.
+
+## Pages
+| Page | Topic | Source-backed? |
+|---|---|---|
+| `overview.md` | {{what the project is}} | Yes |
+| {{page}} | {{topic}} | {{Yes/No}} |
+
+## Pointers
+- Decisions: `../project-management/DECISIONS.md`
+- Open questions: `../project-management/OPEN_QUESTIONS.md`
+- Capabilities: `../CAPABILITY-MATRIX.md`
+- Sources + confidence: `SOURCE-INDEX.md`
+
+_Last compiled: {{DATE}}_
