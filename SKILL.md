@@ -25,7 +25,7 @@ Set up a project once so every future agent arrives oriented, grounded, and awar
 List the repo's top 2 levels. Note existing docs, code, data, `.obsidian/`, monorepo subprojects, and wired MCPs. Extend what exists; don't duplicate it.
 
 ### Phase 1 — Interview (ask, don't assume)
-Confirm in one batch: project name + one-line purpose + owner; archetype (map below); authoritative sources vs raw/scratch; wired tools/MCPs.
+Confirm in one batch: project name + one-line purpose + owner; archetype (map below); authoritative sources vs raw/scratch; wired tools/MCPs; whether to enable the optional `agent-transcript-archive` companion skill; if enabled, the local companion skill path.
 
 ### Phase 2 — Scaffold
 Install **Core + Recommended** always. Add the **archetype bundle**. Auto-enable detected extras (Obsidian, nested `AGENTS.md`). Copy each template, fill placeholders, and link it from `AGENTS.md`.
@@ -33,7 +33,9 @@ Install **Core + Recommended** always. Add the **archetype bundle**. Auto-enable
 **Claude bridge:** other agents (Codex, Cursor, Copilot, Gemini CLI, Windsurf…) read `AGENTS.md` natively — no mirror. Only Claude Code / Cowork need it: symlink `CLAUDE.md → AGENTS.md` (`ln -s AGENTS.md CLAUDE.md`) and verify it resolves; if symlinks aren't supported, copy `templates/CLAUDE.md.template` (strong pointer) instead. Repeat next to each nested `AGENTS.md`.
 
 ### Phase 3 — Ground + hand off
-Verify `AGENTS.md` carries the grounding + handoff rules (citations, Verified/Guess, newer-wins, write-approval gates). Write the first `agent-sessions/` entry.
+Verify `AGENTS.md` carries the grounding + handoff rules (citations, Verified/Guess, newer-wins, write-approval gates). If transcript archiving was enabled, install/configure the companion skill from `https://github.com/shaugupt/agent-transcript-archive`, run its `setup` command from the target project, and add transcript archive instructions with the real local command path. Write the first `agent-sessions/` entry.
+
+**Transcript archive companion install:** if enabled, choose/confirm a local install path for `agent-transcript-archive`. If absent, clone `https://github.com/shaugupt/agent-transcript-archive`; if present, update with `git pull --ff-only`. From the target project, run `node <agent-transcript-archive-path>/bin/agent-transcript-archive.mjs setup`, then put that exact path in `AGENTS.md`.
 
 ### Phase 4 — Verify
 - `AGENTS.md` ≤ ~400 lines; links resolve; no leftover placeholders.
@@ -63,6 +65,9 @@ Do-Not-Load list · Start-Here sequence · Claude bridge (`CLAUDE.md`↔`AGENTS.
 | Strategy / PM | meeting notes, action-tracker MCP |
 | Engineering / code | CHANGELOG, no-milestone framing, git hooks |
 | Research / RAG | RAG cache, raw→wiki compile (heavy) |
+
+**Optional — by explicit user opt-in**
+`agent-transcript-archive` companion skill — project-local, gitignored transcript archive for OpenCode, Claude Code, Cursor, Codex, and VSCode GitHub Copilot Chat. Install from `https://github.com/shaugupt/agent-transcript-archive`; keep sync/adapters outside basecamp.
 
 Auto-detect: Obsidian (`.obsidian/`), nested `AGENTS.md` (monorepo).
 

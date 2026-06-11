@@ -16,6 +16,10 @@ ln -s /Users/shaugupt/Personal/Skills/basecamp ~/.cursor/skills/basecamp
 
 Ask an agent to run `basecamp` when setting up a new or existing repo for agent collaboration.
 
+During setup, basecamp can offer the optional `agent-transcript-archive` companion skill for project-local transcript history across OpenCode, Claude Code, Cursor, Codex, and VSCode GitHub Copilot Chat.
+
+Companion repo: https://github.com/shaugupt/agent-transcript-archive
+
 ## License
 
 MIT. See `LICENSE`.

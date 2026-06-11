@@ -48,6 +48,11 @@ Tiers: **Core** (always) · **Recommended** (on by default) · **Optional** (by 
 
 Auto-detect (any archetype): Obsidian (`.obsidian/` → wikilinks/graph); nested `AGENTS.md` (monorepo subtrees, per the agents.md standard).
 
+## Optional — companion skill by user opt-in
+| Companion | Adds | Notes |
+|---|---|---|
+| `agent-transcript-archive` | Local transcript archive under `agent-sessions/transcripts/` for OpenCode, Claude Code, Cursor, Codex, and VSCode GitHub Copilot Chat | Ask during basecamp setup. If enabled, install from `https://github.com/shaugupt/agent-transcript-archive` and delegate setup/sync to the companion. Keep full transcripts gitignored and out of read-first context. |
+
 ## Review before enabling (provenance)
 NOT installed by default. Enable only after you confirm you understand and own the pattern.
 
@@ -55,13 +60,14 @@ NOT installed by default. Enable only after you confirm you understand and own t
 |---|---|---|
 | Maturity-tier grounding + confidence scoring | internal workspace pattern | Adopt the concept (tag facts shipped / in-dev / planned, caveat the rest). Rebuild a simple version; do not copy bespoke scoring formulas. |
 | Agentic RAG cache (cache-first, TTL, SSO fetch) | internal workspace pattern | Heaviest feature. Prefer a separate opt-in sub-skill over baking it in. |
+| Agent transcript archive | user-owned companion skill | Already split into `agent-transcript-archive`; integrate by opt-in install rather than embedding adapter code in basecamp. |
 | CHANGELOG (Keep a Changelog) | public standard | Safe to adopt as your own. |
 | Subagent personas | generic agent pattern | Safe to adopt the pattern. |
 | Source router (local vs MCP) | internal workspace pattern | Confirm ownership; concept is generic and safe to rebuild. |
 | No-Milestone-Leakage | internal workspace pattern | Confirm ownership; generic engineering practice. |
 
 ## Sub-skill candidates
-Heavy features better shipped as their own skills that basecamp installs on request, rather than bloating one skill: `maturity-grounding`, `agentic-rag-cache`, `wiki-compiler` (raw→wiki + drift).
+Heavy features better shipped as their own skills that basecamp installs on request, rather than bloating one skill: `agent-transcript-archive`, `maturity-grounding`, `agentic-rag-cache`, `wiki-compiler` (raw→wiki + drift).
 
 ## Lineage (where each pattern was observed)
 - Public: agents.md (entry point, native AGENTS.md + Claude bridge, nested AGENTS.md, Definition of Done), Keep a Changelog, Karpathy LLM-wiki (read-first index, source provenance, drift, Q&A→KB, raw→wiki).

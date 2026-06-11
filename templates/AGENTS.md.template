@@ -49,8 +49,12 @@ Load only what the task needs. Do not crawl the whole repo.
 ## 8. Capabilities
 See `CAPABILITY-MATRIX.md` — what this project supports, doesn't, or is unconfirmed.
 
-## 9. Tools / MCPs
+## 9. Optional transcript archive
+{{If enabled: This project keeps normalized local agent transcripts under `agent-sessions/transcripts/` using the `agent-transcript-archive` companion skill from https://github.com/shaugupt/agent-transcript-archive. Read `agent-sessions/INDEX.md` during normal onboarding. Use `agent-sessions/transcripts/INDEX.md` only to find relevant prior transcript history. Open full transcript files only when the task needs prior conversation detail or project-history search. At session end, run `node {{AGENT_TRANSCRIPT_ARCHIVE_PATH}}/bin/agent-transcript-archive.mjs sync` from the project root. Full transcript files are local-only by default and may contain secrets, personal data, proprietary code, prompts, and tool outputs.}}
+{{If disabled: Transcript archiving is not enabled. If the user wants cross-agent transcript history later, ask before installing the `agent-transcript-archive` companion skill from https://github.com/shaugupt/agent-transcript-archive.}}
+
+## 10. Tools / MCPs
 - {{wired MCP / tool — how and when to use it}}
 
-## 10. Session handoff
+## 11. Session handoff
 At session end, if anything meaningful changed: copy `agent-sessions/_TEMPLATE.md` to `agent-sessions/YYYY-MM-DD-<slug>.md`, fill it, and prepend a line to `agent-sessions/INDEX.md`. Skip for pure Q&A.
